@@ -1,0 +1,116 @@
+/* untuk mengakali agar footer menjadi fix di 
+   di bawah dengan membuat html menjadi realtive
+   dan body margin-bottom sesuai tinggi gooternya */
+
+html {
+    position: relative;
+}
+
+body {
+    margin-bottom: 100px;
+    margin-top:30px;
+}
+
+
+/* untuk buat efek parallax */
+.jumbotron {
+    height: 450px;
+    /* nambah gambar background */
+    background-image: url(img/header-bg.jpg);
+    /* untuk buat fix background scrolling body */
+    background-attachment: fixed;
+    background-size: cover;
+    /* untuk merubah posisi image background  */
+    background-position: 0 -80px;
+    color: #eaeaea;
+    overflow: hidden;
+}
+
+
+.jumbotron img {
+    width: 200px;
+    border: 5px solid #eaeaea;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+
+.jumbotron h1, .jumbotron p {
+    text-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+
+section hr {
+    width: 250px;
+    border: 2px solid #888;
+    
+}
+
+/* untuk beri minimal tinggi pada section */
+section {
+    min-height: 600px;
+}
+
+
+/* Nambah efek Parallax */
+/* Ngasih Animasi */
+/* awal nya hilang */
+.pKiri ,.pKanan {
+    opacity: 0;
+    transform: translate(-50px, 0) rotate(15deg);
+    transition: 1s;
+}
+
+.pKanan {
+    transform: translate(50px,0) rotate(-15deg);
+}
+
+/* akhirnya muncul lagi(kelas muncul dipanggil lewat jquery) */
+.pKiri.pMuncul , .pKanan.pMuncul {
+    opacity: 1;
+    transform: translate(0,0);
+
+}
+
+.portfolio {
+    background-color: #eee;
+}
+
+/* Ngasih Animasi */
+/* awal nya hilang */
+.portfolio .thumbnail {
+    opacity: 0;
+    transform: translate(0,-40px);
+    transition: 0.5s;
+}
+
+/* akhirnya muncul lagi(kelas muncul dipanggil lewat jquery) */
+/* kelas thumbnail dan muncul berdekatan karena ada dalam 1 kelas */
+.portfolio .thumbnail.muncul {
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+.portoku, .kontaku {
+    margin-top: 30px;
+}
+
+.contact {
+    min-height: 800px;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    background-color: #333;
+    bottom:0;
+    padding: 30px;
+}
+
+footer p {
+    color:#aaa;
+    font-size: 0.9em
+}
+
+/* merubah warna icon */
+footer p svg {
+    color: salmon;
+}
